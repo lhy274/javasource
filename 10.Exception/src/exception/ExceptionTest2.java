@@ -13,6 +13,7 @@ public class ExceptionTest2 {
 		
 		System.out.println(vaue1);
 		System.out.println(vaue2);
+		System.out.println("------------------");
 		
 	}
 
