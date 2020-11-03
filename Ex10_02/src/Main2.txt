@@ -1,0 +1,38 @@
+System.out.printf("입력한 문자열 ==> %s\n", str);
+System.out.printf("입력한 문자열 ==>");
+for(int i = str.length() -1; i >= 0; --i) {
+System.out.printf("%s", str.charAt(i));
+
+글자를 입력 :java 가자
+입력한 문자열 ==> java 가자
+입력한 문자열 ==>자가 avaj
+
+나오던데
+이런식으로
+int str_cnt;
+str_cnt = str.length();
+for(int i = str_cnt-1; i >= 0; --i)
+
+이렇게
+str_cnt = str.length(); 없어도 괜찮은 가요?
+
+
+ㅡㅡ
+int str_cnt;
+str_cnt = str.length();
+for(int i = str_cnt-1; i >= 0; --i)
+여기에서 
+
+그냥 처음
+for(int i = str.length() -1; i >= 0; --i) {
+주었을 때처럼
+
+ㅡㅡ
+
+
+for(int i = str.length() -1; i >= 0; --i) {
+System.out.printf("%s", str.charAt(i));
+
+이건 < 인데 -1 안줘서 그런 건가?
+
+
