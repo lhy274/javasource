@@ -36,8 +36,8 @@ public class MyShop implements IShopping {
 	@Override
 	public void start() {
 		// TODO Auto-generated method stub
-		for(product a: products)
-			System.out.println(printDetail);
+		//dfor(product a: products)
+			//System.out.println(printDetail);
 	}
 
 }
