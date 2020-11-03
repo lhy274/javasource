@@ -11,7 +11,7 @@ public class ExceptionTest2 {
 		
 		System.out.println(vaue1+vaue2);
 		
-		System.out.pringln(vaue1);
+		System.out.println(vaue1);
 		
 	}
 
