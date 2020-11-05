@@ -8,7 +8,7 @@ public class MyShop implements IShopping {
 	User [] users = new User[2]; //3. 클래스 만들고 나니까 만들어지네//10. 이것도 유저 기반 배열이구나 그래서 아래쪽거를 넣는듯?? 이 아니라?? 맞는듯?
 	Product [] products = new Product[10];//2. 클래스를 만들엇 놔서 만들 수 있었네
 	ArrayList<Product> carts = new ArrayList<Product>();
-	Scanner scan = new Scanner(System.in);
+	Scanner s = new Scanner(System.in); //11. s scan 이거 두개 다 변수명이였구나 //12. 아 이거 스캐너 시작 말.
 	int selUser;
 	private String title;//4. 이건 내부에서 쓰는 필드 같은데
 	
@@ -35,10 +35,67 @@ public class MyShop implements IShopping {
 
 	@Override
 	public void start() {
-		// TODO Auto-generated method stub
-		//dfor(product a: products)
-			//System.out.println(printDetail);
+		int i = 0;
+		for(User a: users)
+			System.out.printf("순서 : %d, 고객 : %s(%s)", i++, a.getName(), a.getPayType());
+		
+		String num = s.next(); // char num  해서 할려고 했는데 안되네.
+		
+		System.out.println(num + " 누르셨습니다.");
+		
+		switch (num) {// 이건 진짜 제품 설명이기도 하지만 그전에 유저 선택하고 
+		case "0": case "1":
+			System.out.println("등록번호" + num + "반갑습니다.");
+			selUser = Integer.parseInt(num); // 이거 또 나왔네 파스인트랑
+			productList();
+			break;
+		case "x":case "X":
+			System.out.println("종료버튼을 누르셨습니다.");
+			break;
+		default:
+			System.out.println("없는 선택입니다. 다시 확인해주세요.");
+			break;
+		}
+		
+		
+	}//start() end
+
+	
+	void productList() { // 여기서 스캐너가 필요 없는 이유가 위에서 가져다 써서 그렇구나
+		int k = 0;
+		for(Product c:products) {
+			System.out.printf("[%d]", k++);//printDetail 숫자가 있는 건 아니니까. products는 배열에 넣은 것 뿐이고
+			c.printDetail();// 처음에 배열로 만들어서 이렇게 뽑는 게 참 아름답네.
+		}
+
+		String check = s.next();
+		
+		switch (check) { // 장바구니구나 // 장바구니래서 다른 checkout 메소드로 빠진 줄
+		case "0":case "1":case "2":case "3":
+		case "4":case "5":case "6":case "7":
+		case "8":case "9":
+			carts.add(products[Integer.parseInt(check)]); //carts는 ArrayList 배열이라서 ArrayList 안에 있는 메소드 가져다 쓸 수 있지
+			//배열을 스위치문(끝남의 기약이 없는) 돌때마다 하나씩 Array배열에 저장해
+			//products[Integer.parseInt(check)] - products의 배열의 번호 부분을 저장하는 거지 그런데 왜 바로 check가 안되는 거지??
+			productList();
+			break;
+
+		default:// 다른 걸 눌러도 일단 목록을 보여줘.
+			productList();
+			break;
+		}
+		
+		
+		
+	}//productList end
+	
+	void checkout() {
+		for(che a:carts)
+			System.out.println(a.carts);
 	}
 
-}
+	
+	
+	
+}//MyShop end
 

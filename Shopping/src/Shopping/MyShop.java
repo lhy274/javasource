@@ -120,7 +120,7 @@ public class MyShop implements IShop {
 			productList();
 			break;
 		}
-	}
+	}//productList end
 		public void checkout() {
 			/*
 			System.out.println("º±≈√ : ");
